@@ -47,7 +47,7 @@ def index():
                 # file.save(filepath)
                 # img = image.load_img(filepath, target_size=(224, 224))
                 # pred = predict_class(np.asarray(img), model)
-                result = ["Healthy", "Not Healthy"]
+                result = ["Xray Image Is Normal", "Xray Image Has Pneumonia"]
                 # os.remove(filepath)  # Clean up the uploaded file
             else:
                 result = "File not allowed"
