@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vitascan</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/mediaqueries.css') }}"
+    />
+  </head>
+  <body>
+    <nav>
+      <div class="logo">Vitascan</div>
+      <div class="nav_items">
+        <ul class="nav_links">
+          <li><a href="#Services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact us</a></li>
+        </ul>
+      </div>
+    </nav>
+    <section id="profile">
+      <div class="section_pic_container">
+        <img
+          src="{{ url_for('static', filename='assets/images/about_logo.png') }}"
+          alt="About_logo"
+        />
+      </div>
+      <div class="section_text">
+        <h1 class="title">Brain Tumour Predictor</h1>
+        <p class="section_text_p2">
+          A brain tumor is an abnormal growth of cells in the brain. It can
+          originate from brain cells or cells that have spread from other parts
+          of the body to the brain. Brain tumors can be either benign
+          (non-cancerous) or malignant (cancerous).
+        </p>
+      </div>
+    </section>
+    <section id="about">
+      <form method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="inputImage">Upload Image</label>
+          <input
+            type="file"
+            class="form-control-file"
+            id="inputImage"
+            name="inputImage"
+            accept="image/*"
+            required
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      {% if prediction is not none %}
+      <div class="mt-4">
+        <h2>Prediction: {{ prediction }}</h2>
+      </div>
+      {% endif %}
+    </section>
+    
+
+    <section id="Services">
+      <h1 class="title">Currently Avaliable Services</h1>
+      <div class="experience-details-container">
+        <div class="about-containers">
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="{{ url_for('static', filename='assets/images/heart_image.jpeg') }}"
+                alt="Project 1"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">Heart</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/'"
+              >
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/'"
+              >
+                Live Demo
+              </button>
+            </div>
+          </div>
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="{{ url_for('static', filename='assets/images/chest.jpg') }}"
+                alt="Project 3"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">Chest</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/'"
+              >
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/'"
+              >
+                Live Demo
+              </button>
+            </div>
+          </div>
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="{{ url_for('static', filename='assets/images/brain.jpg') }}"
+                alt="Project 3"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">Brain</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/'"
+              >
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/'"
+              >
+                Live Demo
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contact">
+      <p class="section__text__p1">Get in Touch</p>
+      <h1 class="title">Contact Me</h1>
+      <div class="contact-info-upper-container">
+        <div class="contact-info-container">
+          <img
+            src="{{ url_for('static', filename='assets/images/email.png') }}"
+            alt="Email icon"
+            class="icon contact-icon email-icon"
+          />
+          <p>
+            <a href="mailto:manikantajarvis@gmail.com"
+              >manikantajarvis@gmail.com</a
+            >
+          </p>
+        </div>
+        <div class="contact-info-container">
+          <img
+            src="{{ url_for('static', filename='assets/images/linkedin.png') }}"
+            alt="LinkedIn icon"
+            class="icon contact-icon"
+          />
+          <p>
+            <a href="https://www.linkedin.com/in/mohana-manikanta-reddy-padala/"
+              >LinkedIn</a
+            >
+          </p>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <nav>
+        <div class="nav-links-container">
+          <ul class="nav_links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#Services">Services</a></li>
+            <li><a href="#Contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <p>Copyright &#169; 2024 Mani Kanta. All Rights Reserved.</p>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>
